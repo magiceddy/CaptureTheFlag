@@ -19,7 +19,7 @@ contract CaptureTheFlag {
     * @dev Send Ether to Flag, capture data and send Flag balance to send caller
     */
     function send (IFlag flag, Kamikaze kamikaze, bytes32 data) public {
-        kamikaze.delegatecall(bytes4(kecck256("banzai(address)")), flag);
+        kamikaze.delegatecall(bytes4(keccak256("banzai(address)")), flag);
         flag.capture(data);
         msg.sender.transfer(address(this).balance);
     }
